@@ -30,8 +30,7 @@ public class sqlConnection {
             try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
                 try (ResultSet rs = pstmt.executeQuery()) {
                     if (rs.next()) {
-                        String savedCity= rs.getString(1);
-                        return savedCity;
+                        return rs.getString(1);
                     }
                 }
             }

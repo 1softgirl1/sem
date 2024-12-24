@@ -208,7 +208,7 @@ public class HelloController {
                 snow.setText((obj.getJSONObject("snow").getDouble("1h")) + " мм/ч");
             } else snow.setText("Осадков нет");
             String iconCode = obj.getJSONArray("weather").getJSONObject(0).getString("icon");
-            String iconUrl = "http://openweathermap.org/img/wn/" + iconCode + "@2x.png"; // Формируем URL для иконки
+            String iconUrl = "https://openweathermap.org/img/wn/" + iconCode + "@2x.png"; // Формируем URL для иконки
             try {
                 Image image = new Image(new URL(iconUrl).openStream());
                 icon.setImage(image);
@@ -269,7 +269,7 @@ public class HelloController {
     }
 
     private void setIcon(String iconCode, ImageView imageView) {
-        String iconUrl = "http://openweathermap.org/img/wn/" + iconCode + "@2x.png";
+        String iconUrl = "https://openweathermap.org/img/wn/" + iconCode + "@2x.png";
         try {
             Image image = new Image(new URL(iconUrl).openStream());
             imageView.setImage(image);
